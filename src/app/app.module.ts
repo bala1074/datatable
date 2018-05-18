@@ -4,6 +4,10 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { UsertableComponent } from './components/usertable/usertable.component';
 
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
+import {MatTableModule} from '@angular/material';
+import { HttpClientModule } from '@angular/common/http';
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -11,9 +15,12 @@ import { UsertableComponent } from './components/usertable/usertable.component';
     UsertableComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatTableModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
